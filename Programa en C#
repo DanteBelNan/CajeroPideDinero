@@ -1,0 +1,116 @@
+    int buclefinal = 0;
+                    while (buclefinal < 1)
+                    {
+                        int bucle1 = 0;
+                        int bucle2 = 0;
+                        int bucle3 = 0;
+                        int bucle4 = 0;
+                        int bucle5 = 0;
+                        int? PrecioPedido=null;
+
+                        while (bucle1 < 1)
+                        {
+                            bucle1 = 0;
+                            Random randnum1 = new Random();
+                            PrecioPedido = randnum1.Next(320, 550);
+                            if(PrecioPedido % 10 == 0)
+                            {
+                                Console.WriteLine("El Precio del pedido es de ${0}", PrecioPedido);
+                                bucle1++;
+                            }
+                            
+                        }
+
+                        int? DineroPagado =null;
+
+                        while (bucle2 < 2)
+                        {
+                            bucle2 = 0;
+                            Random randnum2 = new Random();
+                            DineroPagado = randnum2.Next(500, 800);
+
+                            if (DineroPagado % 100 == 0)
+                            {
+                                bucle2++;
+                            }
+                            else bucle2 = 0;
+                            if (DineroPagado - PrecioPedido > 99)
+                            {
+                                bucle2++;
+                            }
+
+                            
+                        }
+                        if (bucle2 == 2)
+                        {
+                            Console.WriteLine("Te pagan con ${0}", DineroPagado);
+                        }
+
+                        int? cambio = DineroPagado - PrecioPedido;
+ 
+                        int? usercambio =null;
+                            Console.WriteLine("¿Cual es el cambio?");
+                        while (bucle3 < 1)
+                        {
+                            usercambio = Convert.ToInt32(Console.ReadLine());
+                            bucle3 = 0;
+                            if (usercambio == cambio)
+                            {
+                                bucle3++;
+                            }
+                            else
+                                Console.WriteLine("Incorrecto, ingrese el cambio correcto");
+                        }
+                        
+                        
+                            int? DineroCaja=null;
+                        
+                        while (bucle4 < 2)
+                            {
+                                bucle4 = 0;
+                            Random randnum3 = new Random();
+                            DineroCaja = randnum3.Next(500,1500);
+                                if (DineroCaja % 100 == 0)
+                                {
+                                    bucle4++;
+                                }
+                                if (DineroCaja > cambio);
+                                {
+                                    bucle4++;
+                                }
+                            
+                            }
+                        Console.WriteLine("El monto que tiene en caja es de ${0}", DineroCaja);
+                        int? CajaCambio = DineroCaja - cambio;
+
+                            while (bucle5 < 1) {
+                            int respuesta;
+                            Console.WriteLine("¿Cuanto dinero debe de pedirle al cliente?");
+                            respuesta = Convert.ToInt32(Console.ReadLine());
+                            int? Paso1Final =CajaCambio-respuesta;
+                            bucle5 = 0;
+                            if (Paso1Final % 100 == 0)
+                            {
+                             Console.WriteLine("Correcto, muy bien");
+                             bucle5++;
+                            }
+                            else { 
+                            Console.WriteLine("Fallaste, intentalo denuevo");
+                            }
+
+                        }
+                        int? terminarloop = null;
+                        Console.WriteLine("Quieres intentarlo denuevo? ingresa un numero par para SI, o uno IMPAR para NO");
+                        terminarloop = Convert.ToInt32(Console.ReadLine());
+                        if (terminarloop % 2 != 0) 
+                        {
+                            buclefinal++;
+                            Console.Clear();
+                        }
+                        else
+                        {
+                            Console.Clear();
+                        }
+                        
+
+                    }
